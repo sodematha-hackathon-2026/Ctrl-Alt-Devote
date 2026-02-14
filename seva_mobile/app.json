@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "seva_mobile",
+    "slug": "seva_mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs access to the microphone for voice search.",
+        "NSSpeechRecognitionUsageDescription": "This app needs access to speech recognition for voice search."
+      },
+      "bundleIdentifier": "com.seva.ctrlaltdevote",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBYFdOkjhaBqPSX_4HEEULulr8-ZkKachI"
+      }
+    },
+    "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBYFdOkjhaBqPSX_4HEEULulr8-ZkKachI"
+        }
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.seva.ctrlaltdevote",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-font",
+      "@react-native-voice/voice"
+    ]
+  }
+}
