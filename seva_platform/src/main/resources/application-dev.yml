@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/sode_matha}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:19006,http://localhost:5173,http://10.0.2.2:8081,http://10.0.2.2:8080,http://192.168.29.106:8081,http://192.168.29.106:8080}
+
+logging:
+  level:
+    root: INFO
+    "[com.sode]": DEBUG

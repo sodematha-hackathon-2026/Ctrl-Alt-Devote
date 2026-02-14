@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: sode_backend
+  
+  # Default Profile
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+  # JPA / Hibernate Defaults
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: ${FORMAT_SQL:false}
+    show-sql: ${SHOW_SQL:false}
+  
+  sql:
+    init:
+      mode: always
+
+  # Mail Configuration (Common)
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  # Elasticsearch (Common)
+  elasticsearch:
+    uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
+    # username: ${ELASTICSEARCH_USERNAME}
+    # password: ${ELASTICSEARCH_PASSWORD}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# Custom Properties
+razorpay:
+  key:
+    id: ${RAZORPAY_KEY_ID}
+    secret: ${RAZORPAY_KEY_SECRET}
+
+aws:
+  access-key: ${AWS_ACCESS_KEY}
+  secret-key: ${AWS_SECRET_KEY}
+  region: ${AWS_REGION:ap-south-1}
+  s3:
+    bucket: ${AWS_S3_BUCKET:sode-matha-artefacts}
+
+# JWT
+jwt:
+  secret: ${JWT_SECRET}
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
