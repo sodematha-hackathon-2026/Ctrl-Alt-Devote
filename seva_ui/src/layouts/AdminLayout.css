@@ -1,0 +1,168 @@
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.top-navbar {
+    height: 64px;
+    background-color: var(--color-header);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-xl);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-brand h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.navbar-menu {
+    display: flex;
+    height: 100%;
+    margin: 0 var(--spacing-xl);
+    overflow-x: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: var(--color-primary);
+    color: white;
+}
+
+.nav-icon {
+    font-size: 1.25rem;
+    margin-right: var(--spacing-sm);
+}
+
+.nav-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.user-profile-link {
+    text-decoration: none;
+    color: inherit;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+}
+
+.user-profile-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* .user-icon {
+    font-size: 1.25rem;
+} */
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.logout-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: white;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.content-body {
+    padding: var(--spacing-xl);
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        padding: 0 var(--spacing-md);
+    }
+
+    .navbar-brand h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .nav-icon {
+        margin-right: 0;
+        font-size: 1.4rem;
+    }
+
+    .nav-item {
+        padding: 0 var(--spacing-md);
+    }
+
+    .user-info {
+        display: none;
+    }
+}

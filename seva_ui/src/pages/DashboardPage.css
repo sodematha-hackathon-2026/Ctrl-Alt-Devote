@@ -1,0 +1,377 @@
+button {
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, background-color 0.2s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.dashboard-page {
+    margin: calc(var(--spacing-xl) * -1);
+}
+
+.branded-header {
+    background-color: #FF6F00;
+    padding: var(--spacing-xl);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: var(--shadow-md);
+}
+
+.welcome-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+}
+
+.greeting {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.user-fullname {
+    color: white;
+    font-size: 2rem;
+    margin-top: var(--spacing-xs);
+    font-weight: 700;
+}
+
+.swamiji-section {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-left: auto;
+}
+
+.swamiji-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+}
+
+.swamiji-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+}
+
+.swamiji-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swamiji-name {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: white;
+}
+
+.dashboard-content {
+    padding: var(--spacing-xl);
+}
+
+.alert-banner {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.alert-banner.warning {
+    background-color: #FFF3E0;
+    color: #E65100;
+    border: 1px solid #FFCC80;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.alankara-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 992px) {
+    .branded-header {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+
+    .swamiji-section {
+        margin-left: 0;
+    }
+}
+
+.swamiji-circle {
+    width: 80px;
+    height: 80px;
+}
+
+/* Modal Styles - Moved outside media query for global access */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: var(--spacing-md);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: transparent;
+    padding: 0;
+    border-radius: var(--radius-md);
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.2s;
+    height: auto;
+    width: auto;
+    bottom: auto;
+    left: auto;
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Table Styles - Copied and adapted from VolunteersPage.css */
+.section {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: 1.2rem;
+    color: var(--color-header);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-border);
+    display: inline-block;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+    background-color: var(--color-background);
+    font-weight: 600;
+    color: var(--color-header);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(255, 111, 0, 0.05);
+    /* Orange tint on hover */
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.confirmed,
+.status-badge.approved {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border: 1px solid #C8E6C9;
+}
+
+.status-badge.pending {
+    background-color: #FFF3E0;
+    color: #EF6C00;
+    border: 1px solid #FFE0B2;
+}
+
+.status-badge.cancelled,
+.status-badge.rejected {
+    background-color: #FFEBEE;
+    color: #C62828;
+    border: 1px solid #FFCDD2;
+}
+
+.status-badge.completed {
+    background-color: #E3F2FD;
+    color: #1565C0;
+    border: 1px solid #BBDEFB;
+}
+
+/* Summary Card Styles */
+.card.clickable {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card.clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+/* Page Header with Back Button */
+.page-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Specific Header for Booking Pages */
+.bookings-page {
+    padding-top: var(--spacing-xl);
+}
+
+.booking-page-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.booking-page-header .back-button {
+    grid-column: 1;
+    justify-self: start;
+}
+
+.booking-page-header h2 {
+    grid-column: 2;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--color-header);
+}

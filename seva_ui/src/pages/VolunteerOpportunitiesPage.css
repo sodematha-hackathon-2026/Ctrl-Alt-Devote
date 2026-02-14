@@ -1,0 +1,303 @@
+.volunteer-opportunities-page {
+    padding: var(--spacing-lg);
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.opportunity-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.opportunity-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.opportunity-content {
+    flex: 1;
+}
+
+.opportunity-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-header);
+}
+
+.opportunity-description {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.skills-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.skills-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.skills-text {
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+.opportunity-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.applicant-count {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    background: rgba(234, 88, 12, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+
+/* Users Table - Matching VolunteersPage.css */
+.users-table-container {
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.users-table th {
+    background-color: var(--color-background);
+    font-weight: 600;
+    color: var(--color-header);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Fixed column widths for alignment (6 columns) */
+.users-table th.col-name {
+    width: 20%;
+}
+
+.users-table th.col-email {
+    width: 25%;
+}
+
+.users-table th.col-phone {
+    width: 15%;
+}
+
+.users-table th.col-date {
+    width: 15%;
+}
+
+/* Applied Date */
+.users-table th.col-status {
+    width: 10%;
+}
+
+.users-table th.col-actions {
+    width: 15%;
+}
+
+.users-table tbody tr:hover {
+    background-color: rgba(234, 88, 12, 0.05);
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.PENDING {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.status-badge.APPROVED {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.status-badge.REJECTED {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+/* Button variants for the table */
+button.small {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+button.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.success:hover {
+    background-color: #45a049;
+}
+
+button.danger {
+    background-color: #FEE2E2;
+    color: #B00020;
+    border: 1px solid #FECACA;
+}
+
+button.danger:hover {
+    background-color: #FECACA;
+}
+
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+
+    .users-table th,
+    .users-table td {
+        padding: var(--spacing-sm);
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    /* Force white background */
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--color-header);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-button:hover {
+    color: var(--color-error);
+    transform: none;
+    box-shadow: none;
+}
